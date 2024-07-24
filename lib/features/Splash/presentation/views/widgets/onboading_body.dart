@@ -1,14 +1,20 @@
+import 'package:animal_app/features/Home/presentation/views/Screens/CatygoryScreen.dart';
 import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
 import 'package:animal_app/features/Splash/data/models/onboarding.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../Home/data/models/Category.dart';
 class onboarding extends StatefulWidget {
   @override
-  _onboardingState createState() => _onboardingState();
+  _onboardingState createState() => _onboardingState(categories: []);
 }
 
 class _onboardingState extends State<onboarding> {
   int currentIndex = 0;
   late PageController controller;
+  final List<Category> categories;
+
+  _onboardingState({required this.categories});
 
   @override
   void initState() {
@@ -125,7 +131,7 @@ class _onboardingState extends State<onboarding> {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>HomeView(),
+                          builder: (context) =>CategoryScreen(categories: categories),
                         ),
                       );
                     } else {
