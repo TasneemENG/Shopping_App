@@ -1,6 +1,10 @@
-import 'package:animal_app/features/Home/presentation/views/Screens/CatygoryScreen.dart';
+import 'package:animal_app/features/Home/data/models/Category.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
 import 'package:animal_app/features/Splash/presentation/views/screens/Splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/CatygoryScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +18,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
-      home: Splash_view(),
-
+      theme: ThemeData(
+        textTheme: GoogleFonts.nunitoTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        scaffoldBackgroundColor: Colors.white,
+        // appBarTheme: const AppBarTheme(
+        //   backgroundColor: Colors.teal,
+        //   centerTitle: true,
+        // ),
+        // colorScheme: ColorScheme.fromSwatch().copyWith(
+        //   primary: Colors.teal,
+        //   secondary: Colors.tealAccent,
+        // ),
+      ),
+      home: const Splash_view(),
     );
   }
 }

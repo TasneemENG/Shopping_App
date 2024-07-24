@@ -29,7 +29,7 @@ class RepoHomeImpl extends HomeRepo {
   @override
   Future<Either<failers, List<Products>>> FetchProductCategory(String category) async {
     try {
-      var data = await apisevice.getdata(endpoint: 'products/$category');
+      var data = await apisevice.getdata(endpoint: 'products/category/$category');
       List<Products> productData = [];
 
       for (var i in data["products"]) {
@@ -40,6 +40,4 @@ class RepoHomeImpl extends HomeRepo {
       return left(server_error(error: e.toString()));
     }
   }
-
-
 }

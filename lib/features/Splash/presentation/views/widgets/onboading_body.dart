@@ -1,5 +1,6 @@
 import 'package:animal_app/features/Home/presentation/views/Screens/CatygoryScreen.dart';
 import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
 import 'package:animal_app/features/Splash/data/models/onboarding.dart';
 import 'package:flutter/material.dart';
 
@@ -131,7 +132,7 @@ class _onboardingState extends State<onboarding> {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>CategoryScreen(categories: categories),
+                          builder: (context) =>MainScreen(),
                         ),
                       );
                     } else {

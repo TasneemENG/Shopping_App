@@ -1,9 +1,6 @@
 import 'dart:async';
-
-import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
 import 'package:animal_app/features/Splash/presentation/views/screens/onboarding_view.dart';
 import 'package:flutter/material.dart';
-import 'package:liquid_swipe/liquid_swipe.dart';
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
 
