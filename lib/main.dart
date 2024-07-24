@@ -1,3 +1,4 @@
+import 'package:animal_app/features/Home/presentation/views/Screens/CatygoryScreen.dart';
 import 'package:animal_app/features/Splash/presentation/views/screens/Splash_view.dart';
 import 'package:flutter/material.dart';
 
