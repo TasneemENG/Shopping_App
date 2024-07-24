@@ -1,5 +1,5 @@
 import 'package:animal_app/core/api_service.dart';
-import 'package:animal_app/features/Home/data/models/product.dart';
+import 'package:animal_app/features/Home/data/models/Products.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final api_service apiService = api_service(Dio());
-  List<Product>? data = [];
+  List<Products>? data = [];
 
   @override
   void initState() {
@@ -33,7 +33,6 @@ class _HomeViewState extends State<HomeView> {
           (productData) {
         setState(() {
           data = productData;
-          print("${data![0].products![0].id!}");
         });
       },
     );

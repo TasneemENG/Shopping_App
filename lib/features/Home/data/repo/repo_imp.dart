@@ -1,10 +1,10 @@
 
+import 'package:animal_app/features/Home/data/models/Products.dart';
 import 'package:animal_app/features/Home/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/api_service.dart';
 import '../../../../core/errors/failers.dart';
-import '../models/product.dart';
 
 class RepoHomeImpl extends HomeRepo{
   final api_service apisevice;
@@ -12,13 +12,13 @@ class RepoHomeImpl extends HomeRepo{
   RepoHomeImpl({required this.apisevice});
 
   @override
-  Future<Either<failers,List<Product>>> FetchProduct() async {
+  Future<Either<failers,List<Products>>> FetchProduct() async {
     try {
       var data = await apisevice.getdata( endpoint: 'products');
-      List<Product> productData = [];
+      List<Products> productData = [];
 
       for (var i in data["products"]) {
-        productData.add(Product.fromJson(i));
+        productData.add(Products.fromJson(i));
       }
       return right(productData);
     } catch (e) {
@@ -28,14 +28,14 @@ class RepoHomeImpl extends HomeRepo{
   }
 
   @override
-  Future<Either<failers,List<Product>>> FetchProductCategory(String category) async{
+  Future<Either<failers,List<Products>>> FetchProductCategory(String category) async{
 
     try {
       var data = await apisevice.getdata( endpoint: 'products/$category');
-      List<Product> productData = [];
+      List<Products> productData = [];
 
       for (var i in data["products"]) {
-        productData.add(Product.fromJson(i));
+        productData.add(Products.fromJson(i));
       }
       return right(productData);
     } catch (e) {
