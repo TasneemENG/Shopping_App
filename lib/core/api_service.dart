@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
+
 class api_service{
-  final base_url="link";
+  final base_url="https://dummyjson.com/";
   final Dio dio;
 
   api_service(this.dio);

@@ -1,8 +1,14 @@
+import 'package:animal_app/core/api_service.dart';
+import 'package:animal_app/features/Home/data/repo/repo_imp.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
 import 'package:animal_app/features/Splash/presentation/views/screens/Splash_view.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
+
+
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       home: Splash_view(),
+
     );
   }
 }
