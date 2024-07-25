@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 class onboarding_model{
   String image;

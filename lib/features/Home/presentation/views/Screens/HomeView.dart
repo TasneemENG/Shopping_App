@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:animal_app/features/Home/data/models/Products.dart';
-import 'package:animal_app/features/Home/presentation/views/widgets/ProductGridView.dart'; // Ensure this import path is correct
-import 'package:animal_app/core/api_service.dart';
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:dio/dio.dart';
-import '../../../data/repo/repo_imp.dart';
+
+import 'package:animal_app/core/api_service.dart';
+import 'package:animal_app/features/Home/data/models/Products.dart';
+import 'package:animal_app/features/Home/data/models/Category.dart';
+import 'package:animal_app/features/Home/data/repo/repo_imp.dart';
+import 'package:animal_app/features/Home/presentation/views/widgets/ImageSlider.dart';
+import 'package:animal_app/features/Home/presentation/views/widgets/category_list.dart';
+import 'package:animal_app/features/Home/presentation/views/widgets/popularProductList.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -13,48 +18,50 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final api_service apiService = api_service(Dio());
-  List<Products>? data = [];
+  final PageController _pageController = PageController(viewportFraction: 0.85);
+  final List<String> images = [
+    'sales/15811.jpg',
+    'sales/2952268.jpg',
+    'sales/3245285.jpg',
+    'sales/3282665.jpg',
+    'sales/5028786.jpg',
+    'sales/full-shot-woman-holding-sale-tag.jpg',
+    'sales/sl_100222_53080_35.jpg',
+  ];
+
+  final apiService = api_service(Dio());
+  List<Products> popularProducts = [];
   bool isLoading = true;
-  bool hasError = false;
-  String errorMessage = '';
 
   @override
   void initState() {
     super.initState();
-    getProduct();
+    getProducts();
   }
 
-  Future<void> getProduct() async {
+  Future<void> getProducts() async {
     final homeRepo = RepoHomeImpl(apisevice: apiService);
-    final result = await homeRepo.FetchProduct();
-
+    final result = await homeRepo.FetchProduct(limit: 5, skip: 10);
     result.fold(
           (failure) {
+        print("Error fetching products: ${failure.error}");
         setState(() {
           isLoading = false;
-          hasError = true;
-          errorMessage = "Error fetching products: ${failure.error}";
         });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(errorMessage)),
-        );
       },
           (productData) {
         setState(() {
-          data = productData;
+          popularProducts = productData;
           isLoading = false;
         });
       },
     );
   }
 
-  Future<void> _refreshData() async {
-    setState(() {
-      isLoading = true;
-      hasError = false;
-    });
-    await getProduct();
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -63,25 +70,74 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            "category image/WhatsApp Image 2024-07-25 at 02.58.59_88c7ec32.jpg",
+            width: 40,
+            height: 40,
+            fit: BoxFit.cover,
+          ),
+        ),
         title: Text(
           "Home",
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontWeight: FontWeight.w600,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.bold,
             color: Colors.orange,
           ),
         ),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.stacked_line_chart),
+            icon: const Icon(Icons.notifications),
             color: Colors.orange,
             onPressed: () {
-              // Add functionality for forward button
+              // Add functionality for notifications button
             },
           ),
         ],
       ),
-      body: null
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              child: ImageSlider(
+                pageController: _pageController,
+                images: images,
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              child: HorizontalCategoryList(
+                categories: categories, // Ensure `categories` is defined or fetched
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Text(
+                'Popular Products',
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.orange,
+                ),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: PopularProductList(
+              products: popularProducts,
+            ),
+          ),
+          // Add more Slivers here if needed for additional content
+        ],
+      ),
     );
   }
 }

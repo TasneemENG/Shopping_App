@@ -72,7 +72,7 @@ class CategoryCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 bottom: 16,
                 right: 16,
                 child: Icon(

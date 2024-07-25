@@ -41,7 +41,7 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) =>   onboarding_view()),
+        MaterialPageRoute(builder: (context) =>   const onboarding_view()),
       );
     });
   }
@@ -64,13 +64,13 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
             Center(
               child: Image.asset("assets/logo.gif",),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             SlideTransition(
               position: _slideAnimation,
               child: Center(
                 child: ShaderMask(
                   shaderCallback: (bounds) {
-                    return LinearGradient(
+                    return const LinearGradient(
                       colors: [
                         Colors.orange,
                         Colors.grey,

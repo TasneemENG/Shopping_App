@@ -1,4 +1,3 @@
-import 'package:animal_app/features/Home/data/models/Category.dart';
 import 'package:animal_app/features/Home/data/models/Products.dart';
 import 'package:animal_app/features/Home/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -12,9 +11,10 @@ class RepoHomeImpl extends HomeRepo {
   RepoHomeImpl({required this.apisevice});
 
   @override
-  Future<Either<failers, List<Products>>> FetchProduct() async {
+  Future<Either<failers, List<Products>>> FetchProduct({int limit = 10, int skip = 0}) async {
     try {
-      var data = await apisevice.getdata(endpoint: 'products');
+      final endpoint = 'products?limit=$limit&skip=$skip'; // Modify endpoint for pagination
+      var data = await apisevice.getdata(endpoint: endpoint);
       List<Products> productData = [];
 
       for (var i in data["products"]) {
@@ -27,9 +27,10 @@ class RepoHomeImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<failers, List<Products>>> FetchProductCategory(String category) async {
+  Future<Either<failers, List<Products>>> FetchProductCategory(String category, {int limit = 10, int skip = 0}) async {
     try {
-      var data = await apisevice.getdata(endpoint: 'products/category/$category');
+      final endpoint = 'products/category/$category?limit=$limit&skip=$skip'; // Modify endpoint for pagination
+      var data = await apisevice.getdata(endpoint: endpoint);
       List<Products> productData = [];
 
       for (var i in data["products"]) {

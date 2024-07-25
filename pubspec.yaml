@@ -32,6 +32,7 @@ dependencies:
   google_fonts: ^5.0.0
   carousel_slider: ^4.0.0
   go_router: ^2.0.3
+  smooth_page_indicator:
 
   flutter:
     sdk: flutter
@@ -70,6 +71,7 @@ flutter:
   assets:
      - assets/
      - category image/
+     - sales/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

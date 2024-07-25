@@ -1,11 +1,11 @@
-import 'package:animal_app/features/Home/presentation/views/Screens/CatygoryScreen.dart';
-import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
 import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
 import 'package:animal_app/features/Splash/data/models/onboarding.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../Home/data/models/Category.dart';
 class onboarding extends StatefulWidget {
+  const onboarding({super.key});
+
   @override
   _onboardingState createState() => _onboardingState(categories: []);
 }
@@ -30,14 +30,14 @@ class _onboardingState extends State<onboarding> {
         backgroundColor: Colors.transparent,
         leading: currentIndex > 0
             ? IconButton(
-          icon: Icon(
+          icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.orange
           ),
 
           onPressed: () {
             controller.previousPage(
-              duration: Duration(milliseconds: 100),
+              duration: const Duration(milliseconds: 100),
               curve: Curves.bounceIn,
             );
             setState(() {
@@ -71,24 +71,24 @@ class _onboardingState extends State<onboarding> {
                 padding: const EdgeInsets.only(top: 0, left: 40, right: 40),
                 child: Text(
                   contents[i].title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 35,
                   ),
                 ),
               ),
-              SizedBox(height: 1),
+              const SizedBox(height: 1),
               Padding(
                 padding: const EdgeInsets.only(top: 2, left: 40, right: 40),
                 child: Text(
                   contents[i].description,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     color: Colors.grey,
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
@@ -96,7 +96,7 @@ class _onboardingState extends State<onboarding> {
                       (index) => Container(
                     height: 10,
                     width: currentIndex == index ? 20 : 10,
-                    margin: EdgeInsets.only(right: 7),
+                    margin: const EdgeInsets.only(right: 7),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: index == currentIndex
@@ -106,11 +106,11 @@ class _onboardingState extends State<onboarding> {
                   ),
                 ),
               ),
-              SizedBox(height: 1),
+              const SizedBox(height: 1),
               Container(
                 height: 40,
                 width: double.infinity,
-                margin: EdgeInsets.only(left: 40, right: 40, top: 20),
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
@@ -118,7 +118,7 @@ class _onboardingState extends State<onboarding> {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -126,18 +126,17 @@ class _onboardingState extends State<onboarding> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Text("Next"),
                   onPressed: () {
                     if (currentIndex == contents.length - 1) {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>MainScreen(),
+                          builder: (context) =>const MainScreen(),
                         ),
                       );
                     } else {
                       controller.nextPage(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.bounceIn,
                       );
                       setState(() {
@@ -147,6 +146,7 @@ class _onboardingState extends State<onboarding> {
                   },
                   color: Colors.orange[700],
                   textColor: Colors.white,
+                  child: const Text("Next"),
                 ),
               ),
             ],
