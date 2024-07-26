@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 
 import 'package:animal_app/features/authentication/presentation/views/widgets/login_widget.dart';
@@ -8,6 +7,6 @@ class Login_view extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Login_body();
+    return const Login_body();
   }
 }

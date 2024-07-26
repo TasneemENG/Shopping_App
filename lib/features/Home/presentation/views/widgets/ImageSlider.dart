@@ -37,7 +37,7 @@ class _ImageSliderState extends State<ImageSlider> {
       }
       _pageController.animateToPage(
         _currentPage,
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
       );
     });
@@ -74,7 +74,7 @@ class _ImageSliderState extends State<ImageSlider> {
                     widget.images[index],
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
-                      return Center(
+                      return const Center(
                         child: Icon(
                           Icons.error,
                           color: Colors.red,
