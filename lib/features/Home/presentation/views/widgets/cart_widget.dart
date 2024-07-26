@@ -18,6 +18,7 @@ class Cart_widgrt extends StatefulWidget {
 
   static void removeFavorite(Products product) {
     favoriteproducts.remove(product);
+
   }
   const Cart_widgrt({super.key});
 
@@ -49,7 +50,7 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
           ],
         ),
       ),
-      body: Column(
+      body:Column(
         children: [
           Expanded(
             child: ListView.builder(
@@ -88,6 +89,16 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
                               ),
                             ),
                           ),
+                          MaterialButton(
+                            onPressed: () {
+                              setState(() {
+                                Cart_widgrt.removeFavorite(product);
+                              });
+
+                            },
+                            child: Text("Delete", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                            color: Colors.orange,
+                          ),
                         ],
                       ),
                       SizedBox(height: 10),
@@ -109,14 +120,18 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10),
           MaterialButton(
             color: Colors.orange,
-
-
-            child: Text("Order now",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-              onPressed: (){})
-          ,SizedBox(height: 10,),
+            child: Text(
+              "Order now",
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+            onPressed: () {
+              // Handle order now action
+            },
+          ),
+          SizedBox(height: 10),
         ],
       ),
     );

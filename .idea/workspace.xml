@@ -4,26 +4,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45b3de66-f979-498d-983d-76e63fbf7c32" name="Changes" comment="tasneem4">
+    <list default="true" id="45b3de66-f979-498d-983d-76e63fbf7c32" name="Changes" comment="rania,,">
+      <change afterPath="$PROJECT_DIR$/sales/a2020cf5-9244-4244-8b8b-46186a571545.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shopping_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shopping_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/HomeView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/HomeView.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/ImageSlider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/ImageSlider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/ProductGridView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/ProductGridView.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/Widget_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/Widget_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/popularProductList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/popularProductList.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/cart_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/cart_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/authentication/presentation/views/widgets/login_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/authentication/presentation/views/widgets/login_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +67,9 @@
       <recent name="C:\Users\lenovo\AndroidStudioProjects\shopping_app\sales" />
       <recent name="C:\Users\lenovo\AndroidStudioProjects\shopping_app" />
       <recent name="C:\Users\lenovo\AndroidStudioProjects\shopping_app\category image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ranya\AndroidStudioProjects\shopping_app\sales" />
     </key>
   </component>
   <component name="RunManager">
@@ -152,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721954174896</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="rania,,">
+      <option name="closed" value="true" />
+      <created>1722003091045</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1722003091045</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +171,7 @@
     <MESSAGE value="tasneem2" />
     <MESSAGE value="tasneem3" />
     <MESSAGE value="tasneem4" />
-    <option name="LAST_COMMIT_MESSAGE" value="tasneem4" />
+    <MESSAGE value="rania,," />
+    <option name="LAST_COMMIT_MESSAGE" value="rania,," />
   </component>
 </project>
