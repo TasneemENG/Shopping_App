@@ -109,6 +109,14 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
               ),
             ),
           ),
+          SizedBox(height: 10,),
+          MaterialButton(
+            color: Colors.orange,
+
+
+            child: Text("Order now",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+              onPressed: (){})
+          ,SizedBox(height: 10,),
         ],
       ),
     );
