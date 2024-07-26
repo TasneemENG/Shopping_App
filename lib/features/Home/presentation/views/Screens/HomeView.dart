@@ -30,6 +30,7 @@ class _HomeViewState extends State<HomeView> {
   final apiService = api_service(Dio());
   List<Products> popularProducts = [];
   List<Products> flashSaleProducts = [];
+  List<Products> likeProducts = [];
   bool isLoading = true;
 
   @override
@@ -78,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
   }
   Future<void> getMoreProducts() async {
     final homeRepo = RepoHomeImpl(apisevice: apiService);
-    final result = await homeRepo.FetchProduct(limit: 12, skip: 20);
+    final result = await homeRepo.FetchProduct(limit: 14, skip: 20);
     result.fold(
           (failure) {
         print("Error fetching products: ${failure.error}");
@@ -88,7 +89,7 @@ class _HomeViewState extends State<HomeView> {
       },
           (productData) {
         setState(() {
-          flashSaleProducts = productData;
+          likeProducts = productData;
           isLoading = false;
         });
       },
@@ -223,7 +224,7 @@ class _HomeViewState extends State<HomeView> {
           ),
           SliverToBoxAdapter(
             child: ProductGridView(
-              products: flashSaleProducts,
+              products: likeProducts,
             ),
           ),
           // Add more Slivers here if needed for additional content
