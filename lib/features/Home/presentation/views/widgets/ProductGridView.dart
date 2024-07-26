@@ -9,12 +9,15 @@ class ProductGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
       child: GridView.builder(
+        shrinkWrap: true, // Allows GridView to fit within the constraints of its parent
+        physics: NeverScrollableScrollPhysics(), // Disable scrolling
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // Number of columns in the grid
-          crossAxisSpacing: 2.0, // Horizontal spacing between items
-          mainAxisSpacing: 2.0, // Vertical spacing between items
+          crossAxisSpacing: 8.0, // Horizontal spacing between items
+          mainAxisSpacing: 8.0, // Vertical spacing between items
           childAspectRatio: 0.6, // Aspect ratio of each item
         ),
         itemCount: products.length,

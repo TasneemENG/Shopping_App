@@ -1,3 +1,4 @@
+import 'package:animal_app/features/Home/presentation/views/widgets/ProductGridView.dart';
 import 'package:flutter/material.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:dio/dio.dart';
@@ -20,23 +21,22 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final PageController _pageController = PageController(viewportFraction: 0.85);
   final List<String> images = [
-    'sales/15811.jpg',
-    'sales/2952268.jpg',
     'sales/3245285.jpg',
     'sales/3282665.jpg',
     'sales/5028786.jpg',
-    'sales/full-shot-woman-holding-sale-tag.jpg',
     'sales/sl_100222_53080_35.jpg',
   ];
 
   final apiService = api_service(Dio());
   List<Products> popularProducts = [];
+  List<Products> flashSaleProducts = [];
   bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
     getProducts();
+    getFlashSaleProducts();
   }
 
   Future<void> getProducts() async {
@@ -52,6 +52,43 @@ class _HomeViewState extends State<HomeView> {
           (productData) {
         setState(() {
           popularProducts = productData;
+          isLoading = false;
+        });
+      },
+    );
+  }
+
+  Future<void> getFlashSaleProducts() async {
+    final homeRepo = RepoHomeImpl(apisevice: apiService);
+    final result = await homeRepo.FetchProduct(limit: 10, skip: 3);
+    result.fold(
+          (failure) {
+        print("Error fetching products: ${failure.error}");
+        setState(() {
+          isLoading = false;
+        });
+      },
+          (productData) {
+        setState(() {
+          flashSaleProducts = productData;
+          isLoading = false;
+        });
+      },
+    );
+  }
+  Future<void> getMoreProducts() async {
+    final homeRepo = RepoHomeImpl(apisevice: apiService);
+    final result = await homeRepo.FetchProduct(limit: 12, skip: 20);
+    result.fold(
+          (failure) {
+        print("Error fetching products: ${failure.error}");
+        setState(() {
+          isLoading = false;
+        });
+      },
+          (productData) {
+        setState(() {
+          flashSaleProducts = productData;
           isLoading = false;
         });
       },
@@ -105,7 +142,7 @@ class _HomeViewState extends State<HomeView> {
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 8.0),
               child: ImageSlider(
-                pageController: _pageController,
+
                 images: images,
               ),
             ),
@@ -121,18 +158,72 @@ class _HomeViewState extends State<HomeView> {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Text(
-                'Popular Products',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.orange,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Popular Products',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.orange,
+                      fontSize: 20
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
           SliverToBoxAdapter(
             child: PopularProductList(
               products: popularProducts,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Flash Sale',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.orange,
+                        fontSize: 20
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: PopularProductList(
+              products: flashSaleProducts,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'You might like',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                        fontSize: 30
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: ProductGridView(
+              products: flashSaleProducts,
             ),
           ),
           // Add more Slivers here if needed for additional content
