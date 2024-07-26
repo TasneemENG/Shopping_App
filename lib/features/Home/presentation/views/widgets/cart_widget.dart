@@ -1,10 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../data/models/Dimensions.dart';
-import '../../../data/models/Meta.dart';
 import '../../../data/models/Products.dart';
-import '../../../data/models/Reviews.dart';
 
 class Cart_widgrt extends StatefulWidget {
 
@@ -34,11 +31,12 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
           (sum, product) => sum + (product.price ?? 0.0),
     );
   }
+  @override
   Widget build(BuildContext context) {
     double totalAmount = total;
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -56,15 +54,15 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
               itemCount: Cart_widgrt.favoriteproducts.length,
               itemBuilder: (context, index) {
                 final product = Cart_widgrt.favoriteproducts[index];
-                return Container(
+                return SizedBox(
                   width: double.infinity,
                   child: Column(
                     children: [
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       ListTile(
                         title: Text(
                           product.title ?? '',
-                          style: TextStyle(color: Colors.black),
+                          style: const TextStyle(color: Colors.black),
                           textDirection: TextDirection.rtl,
                         ),
                         leading: Image.network(
@@ -73,7 +71,7 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
                           height: 150,
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -81,7 +79,7 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
                             padding: const EdgeInsets.only(top: 10, right: 20),
                             child: Text(
                               "\$${product.price?.toStringAsFixed(2) ?? '0.00'}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.orange,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -90,8 +88,8 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
-                      Divider(color: Colors.orange),
+                      const SizedBox(height: 10),
+                      const Divider(color: Colors.orange),
                     ],
                   ),
                 );
@@ -102,21 +100,21 @@ class _Cart_widgrtState extends State<Cart_widgrt> {
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'Total: \$${totalAmount.toStringAsFixed(2)}',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.orange,
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           MaterialButton(
             color: Colors.orange,
 
 
-            child: Text("Order now",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+            child: const Text("Order now",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
               onPressed: (){})
-          ,SizedBox(height: 10,),
+          ,const SizedBox(height: 10,),
         ],
       ),
     );

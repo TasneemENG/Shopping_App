@@ -24,12 +24,12 @@ class _WidgetDetailsState extends State<WidgetDetails> {
             onTap: (){
               Navigator.pop(context);
             },
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     child: Icon(Icons.arrow_back_ios,color: Colors.orange,),
                   ),
                 ],
@@ -46,7 +46,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
               
               widget.product.images?.first ?? 'https://via.placeholder.com/150',
               fit: BoxFit.fill,
-              errorBuilder: (context, error, stackTrace) => Center(
+              errorBuilder: (context, error, stackTrace) => const Center(
                 child: Icon(
                   Icons.error,
                   color: Colors.red,
@@ -55,7 +55,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
               ),
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
@@ -71,7 +71,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
                     fontSize: 27,
                   ),
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Text("\$${widget.product.price?.toStringAsFixed(2) ?? '0.00'}", // Placeholder if price is null
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     color: Colors.orange,
@@ -82,7 +82,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
               ],
             ),
           ),
-          SizedBox(height: 7,),
+          const SizedBox(height: 7,),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
@@ -93,14 +93,14 @@ class _WidgetDetailsState extends State<WidgetDetails> {
                 fontSize: 15,
               ),),
           ),
-          SizedBox(height: 7,),
+          const SizedBox(height: 7,),
 
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
                 Text("Brand:",style:Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.black,fontSize: 30,fontWeight: FontWeight.w900),),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 Text(
                   widget.product.brand ?? 'Product brand', // Placeholder if title is null
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -111,14 +111,14 @@ class _WidgetDetailsState extends State<WidgetDetails> {
               ],
             ),
           ),
-          SizedBox(height: 7,),
+          const SizedBox(height: 7,),
 
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
                 Text("DisCount:",style:Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.black,fontSize: 30,fontWeight: FontWeight.w900),),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 Text(
                   "${widget.product.discountPercentage?.toStringAsFixed(2)} %" ?? '0.0', // Placeholder if title is null
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -130,7 +130,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
             ),
           ),
 
-    SizedBox(height: 8,),
+    const SizedBox(height: 8,),
           InkWell(
             onTap: (){
               Cart_widgrt.addFavorite(
@@ -157,7 +157,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
                    meta:widget.product.meta,
                    images:widget.product.images,
                    thumbnail:widget.product.thumbnail,));
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart_view()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Cart_view()));
 
             },
             child: Stack(
@@ -166,18 +166,18 @@ class _WidgetDetailsState extends State<WidgetDetails> {
                 Container(
                   height: 30,
                   width: 350,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(40)),
                     color: Colors.orange,
                   ),
                 ),
-                Center(child: Text("Add To Card",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15,),)),
+                const Center(child: Text("Add To Card",style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15,),)),
 
               ],
 
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
         ],
       ),
     );

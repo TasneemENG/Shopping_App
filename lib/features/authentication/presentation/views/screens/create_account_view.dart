@@ -7,6 +7,6 @@ class Create_account extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Create_account_body();
+    return const Create_account_body();
   }
 }

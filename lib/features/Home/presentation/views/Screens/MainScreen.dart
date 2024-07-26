@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = [
     const HomeView(), // Assuming HomeView contains your Home screen
     const CategoryScreen(), // Pass categories here or use a placeholder
-     Cart_view(), // Implement this screen
+     const Cart_view(), // Implement this screen
     const ProfileScreen(), // Implement this screen
   ];
 

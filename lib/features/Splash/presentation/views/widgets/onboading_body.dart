@@ -1,4 +1,4 @@
-import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
 import 'package:animal_app/features/Splash/data/models/onboarding.dart';
 import 'package:animal_app/features/authentication/presentation/views/screens/login_view.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +133,7 @@ class _onboardingState extends State<onboarding> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>const Login_view(),
+                              builder: (context) =>const HomeView(),
                             ),
                           );
                         } else {
@@ -155,7 +155,7 @@ class _onboardingState extends State<onboarding> {
 
 
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Container(
                 child:  Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -163,9 +163,9 @@ class _onboardingState extends State<onboarding> {
                   children: [
 
                     MaterialButton(
-                        child: Text("Skipe",style: TextStyle(color: Colors.grey,letterSpacing: 2,fontWeight: FontWeight.bold),)
+                        child: const Text("Skipe",style: TextStyle(color: Colors.grey,letterSpacing: 2,fontWeight: FontWeight.bold),)
                         ,onPressed: (){
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Login_view()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Login_view()));
                     }
                     ),
                   ],

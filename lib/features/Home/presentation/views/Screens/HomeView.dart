@@ -37,11 +37,12 @@ class _HomeViewState extends State<HomeView> {
     super.initState();
     getProducts();
     getFlashSaleProducts();
+    getMoreProducts();
   }
 
   Future<void> getProducts() async {
     final homeRepo = RepoHomeImpl(apisevice: apiService);
-    final result = await homeRepo.FetchProduct(limit: 5, skip: 10);
+    final result = await homeRepo.FetchProduct(limit: 10, skip: 10);
     result.fold(
           (failure) {
         print("Error fetching products: ${failure.error}");
@@ -78,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
   }
   Future<void> getMoreProducts() async {
     final homeRepo = RepoHomeImpl(apisevice: apiService);
-    final result = await homeRepo.FetchProduct(limit: 14, skip: 0);
+    final result = await homeRepo.FetchProduct(limit: 20, skip: 0);
     result.fold(
           (failure) {
         print("Error fetching products: ${failure.error}");
@@ -205,7 +206,7 @@ class _HomeViewState extends State<HomeView> {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Column(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(

@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 
 import '../screens/login_view.dart';
 class Create_account_body extends StatefulWidget {
+  const Create_account_body({super.key});
+
   @override
   _Create_account_bodyState createState() => _Create_account_bodyState();
 }
 
 class _Create_account_bodyState extends State<Create_account_body> {
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _firstController =TextEditingController();
-  TextEditingController _secondController =TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _firstController =TextEditingController();
+  final TextEditingController _secondController =TextEditingController();
 
   bool _isPasswordValid = false;
   bool _isEmailValid = false;
@@ -72,7 +74,7 @@ class _Create_account_bodyState extends State<Create_account_body> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       /* appBar: AppBar(
           backgroundColor: Colors.transparent,
           leading: GestureDetector(
@@ -104,9 +106,9 @@ class _Create_account_bodyState extends State<Create_account_body> {
                 children: [
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder:(context)=>Login_view() ));
+                      Navigator.push(context, MaterialPageRoute(builder:(context)=>const Login_view() ));
                     },
-                    child: Icon(Icons.arrow_back_ios,color: Colors.orange,),
+                    child: const Icon(Icons.arrow_back_ios,color: Colors.orange,),
 
                   ),
                 ],
@@ -118,7 +120,7 @@ class _Create_account_bodyState extends State<Create_account_body> {
               width: 200,
               height: 200,
             ),
-            Text(
+            const Text(
               "Let's Create Your Account......",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -126,7 +128,7 @@ class _Create_account_bodyState extends State<Create_account_body> {
                 fontSize: 25,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 Expanded(
@@ -144,18 +146,18 @@ class _Create_account_bodyState extends State<Create_account_body> {
                         ),
                       ),
                       hintText: "First Name",
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.person,
                         color: Colors.grey,
                       ),
                       labelText: "First Name",
-                      labelStyle: TextStyle(
+                      labelStyle: const TextStyle(
                           color: Colors.orange),
                     ),
                     cursorColor: Colors.orangeAccent,
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: TextFormField(
                     onChanged: _validateLastName,
@@ -171,12 +173,12 @@ class _Create_account_bodyState extends State<Create_account_body> {
                         ),
                       ),
                       hintText: "Last Name",
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.person,
                         color: Colors.grey,
                       ),
                       labelText: "Last Name",
-                      labelStyle: TextStyle(
+                      labelStyle: const TextStyle(
                           color: Colors.orange),
                     ),
                     cursorColor: Colors.orangeAccent,
@@ -184,7 +186,7 @@ class _Create_account_bodyState extends State<Create_account_body> {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextFormField(
               onChanged: _validateUsername,
               decoration: InputDecoration(
@@ -199,17 +201,17 @@ class _Create_account_bodyState extends State<Create_account_body> {
                   ),
                 ),
                 hintText: "Username",
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   Icons.perm_contact_cal_rounded,
                   color: Colors.grey,
                 ),
                 labelText: "Username",
-                labelStyle: TextStyle(
+                labelStyle: const TextStyle(
                     color: Colors.orange),
               ),
               cursorColor: Colors.orangeAccent,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextFormField(
               onChanged: _validatePhonenumber,
               decoration: InputDecoration(
@@ -224,17 +226,17 @@ class _Create_account_bodyState extends State<Create_account_body> {
                   ),
                 ),
                 hintText: "PhoneNumber",
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   Icons.phone,
                   color: Colors.grey,
                 ),
                 labelText: "PhoneNumber",
-                labelStyle: TextStyle(
+                labelStyle: const TextStyle(
                     color: Colors.orange),
               ),
               cursorColor: Colors.orangeAccent,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextFormField(
               controller: _emailController,
               onChanged: _validateEmail, // Validate email on each change
@@ -251,30 +253,30 @@ class _Create_account_bodyState extends State<Create_account_body> {
                 ),
                 hintText: "E-Mail",
                 suffixIcon: _isEmailValid
-                    ? Icon(
+                    ? const Icon(
                   Icons.check,
                   color: Colors.green,
                 )
                     : null,
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   Icons.email,
                   color: Colors.grey,
                 ),
                 labelText: "E-Mail",
-                labelStyle: TextStyle(
+                labelStyle: const TextStyle(
                     color: Colors.orange),
               ),
               cursorColor: Colors.orangeAccent,
             ),
             if (!_isEmailValid)
-              Padding(
-                padding: const EdgeInsets.only(top: 0),
+              const Padding(
+                padding: EdgeInsets.only(top: 0),
                 child: Text(
                   "email should contain example@gmail.com",
                   style: TextStyle(color: Colors.red),
                 ),
               ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextFormField(
               controller: _passwordController,
               onChanged: _validatePassword, // Validate password on each change
@@ -291,31 +293,31 @@ class _Create_account_bodyState extends State<Create_account_body> {
                 ),
                 hintText: "Password",
                 suffixIcon: _isPasswordValid
-                    ? Icon(
+                    ? const Icon(
                   Icons.check,
                   color: Colors.green,
                 )
                     : null,
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   Icons.lock,
                   color: Colors.grey,
                 ),
                 labelText: "Password",
-                labelStyle: TextStyle(
+                labelStyle: const TextStyle(
                     color: Colors.orange),
               ),
               cursorColor: Colors.orangeAccent,
               obscureText: true,
             ),
             if (!_isPasswordValid)
-              Padding(
-                padding: const EdgeInsets.only(top: 0),
+              const Padding(
+                padding: EdgeInsets.only(top: 0),
                 child: Text(
                   "password should contain letters and numbers...",
                   style: TextStyle(color: Colors.red),
                 ),
               ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             MaterialButton(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -326,13 +328,13 @@ class _Create_account_bodyState extends State<Create_account_body> {
                 if (_isEmailValid && _isPasswordValid&&_isFirstNameValid&&_isLastNameValid&&_isUsernameValid&&_isPhonenumberValid) {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => Login_view()),
+                    MaterialPageRoute(builder: (context) => const Login_view()),
                   );
                 }
 
               },
               color: Colors.orangeAccent,
-              child: Text(
+              child: const Text(
                 "Create Account",
                 style: TextStyle(color: Colors.white),
               ),
