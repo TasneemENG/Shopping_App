@@ -19,7 +19,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
           Container(
             height: 350,
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(40),
                 bottomRight: Radius.circular(40),
@@ -36,7 +36,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
             child: Image.network(
               widget.product.images?.first ?? 'https://via.placeholder.com/150',
               fit: BoxFit.fill,
-              errorBuilder: (context, error, stackTrace) => Center(
+              errorBuilder: (context, error, stackTrace) => const Center(
                 child: Icon(
                   Icons.error,
                   color: Colors.red,
@@ -45,7 +45,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
               ),
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
@@ -69,7 +69,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
               ],
             ),
           ),
-          SizedBox(height: 7,),
+          const SizedBox(height: 7,),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
@@ -80,14 +80,14 @@ class _WidgetDetailsState extends State<WidgetDetails> {
                 fontSize: 15,
               ),),
           ),
-          SizedBox(height: 7,),
+          const SizedBox(height: 7,),
 
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
                 Text("Brand:",style:Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.black,fontSize: 30,fontWeight: FontWeight.w900),),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 Text(
                   widget.product.brand ?? 'Product brand', // Placeholder if title is null
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -98,14 +98,14 @@ class _WidgetDetailsState extends State<WidgetDetails> {
               ],
             ),
           ),
-          SizedBox(height: 7,),
+          const SizedBox(height: 7,),
 
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
                 Text("DisCount:",style:Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.black,fontSize: 30,fontWeight: FontWeight.w900),),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 Text(
                   "${widget.product.discountPercentage?.toStringAsFixed(2)} %" ?? '0.0', // Placeholder if title is null
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -116,7 +116,7 @@ class _WidgetDetailsState extends State<WidgetDetails> {
               ],
             ),
           ),
-          SizedBox(height: 8,),
+          const SizedBox(height: 8,),
       InkWell(
         onTap: (){
 
@@ -127,12 +127,12 @@ class _WidgetDetailsState extends State<WidgetDetails> {
             Container(
               height: 30,
               width: 350,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(40)),
                 color: Colors.black,
               ),
             ),
-            Center(child: Text("Add To Card",style: TextStyle(color: Colors.orangeAccent, fontWeight: FontWeight.normal, fontSize: 15,),))
+            const Center(child: Text("Add To Card",style: TextStyle(color: Colors.orangeAccent, fontWeight: FontWeight.normal, fontSize: 15,),))
           ],
 
         ),

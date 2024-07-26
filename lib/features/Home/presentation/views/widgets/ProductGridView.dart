@@ -13,7 +13,7 @@ class ProductGridView extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GridView.builder(
         shrinkWrap: true, // Allows GridView to fit within the constraints of its parent
-        physics: NeverScrollableScrollPhysics(), // Disable scrolling
+        physics: const NeverScrollableScrollPhysics(), // Disable scrolling
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // Number of columns in the grid
           crossAxisSpacing: 8.0, // Horizontal spacing between items

@@ -1,6 +1,5 @@
 import 'package:animal_app/features/Home/presentation/views/widgets/ProductGridView.dart';
 import 'package:flutter/material.dart';
-import 'package:dartz/dartz.dart' as dartz;
 import 'package:dio/dio.dart';
 
 import 'package:animal_app/core/api_service.dart';
@@ -38,11 +37,12 @@ class _HomeViewState extends State<HomeView> {
     super.initState();
     getProducts();
     getFlashSaleProducts();
+    getMoreProducts();
   }
 
   Future<void> getProducts() async {
     final homeRepo = RepoHomeImpl(apisevice: apiService);
-    final result = await homeRepo.FetchProduct(limit: 5, skip: 10);
+    final result = await homeRepo.FetchProduct(limit: 10, skip: 10);
     result.fold(
           (failure) {
         print("Error fetching products: ${failure.error}");
@@ -61,7 +61,7 @@ class _HomeViewState extends State<HomeView> {
 
   Future<void> getFlashSaleProducts() async {
     final homeRepo = RepoHomeImpl(apisevice: apiService);
-    final result = await homeRepo.FetchProduct(limit: 10, skip: 3);
+    final result = await homeRepo.FetchProduct(limit: 13, skip: 0);
     result.fold(
           (failure) {
         print("Error fetching products: ${failure.error}");
@@ -79,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
   }
   Future<void> getMoreProducts() async {
     final homeRepo = RepoHomeImpl(apisevice: apiService);
-    final result = await homeRepo.FetchProduct(limit: 14, skip: 20);
+    final result = await homeRepo.FetchProduct(limit: 14, skip: 40);
     result.fold(
           (failure) {
         print("Error fetching products: ${failure.error}");
