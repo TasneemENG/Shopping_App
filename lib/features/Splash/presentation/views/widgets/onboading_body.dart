@@ -1,5 +1,6 @@
 import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
 import 'package:animal_app/features/Splash/data/models/onboarding.dart';
+import 'package:animal_app/features/authentication/presentation/views/screens/login_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../Home/data/models/Category.dart';
@@ -122,33 +123,54 @@ class _onboardingState extends State<onboarding> {
                     ),
                   ],
                 ),
-                child: MaterialButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  onPressed: () {
-                    if (currentIndex == contents.length - 1) {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>const MainScreen(),
-                        ),
-                      );
-                    } else {
-                      controller.nextPage(
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.bounceIn,
-                      );
-                      setState(() {
-                        currentIndex++;
-                      });
-                    }
-                  },
-                  color: Colors.orange[700],
-                  textColor: Colors.white,
-                  child: const Text("Next"),
-                ),
+                child:
+                    MaterialButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      onPressed: () {
+                        if (currentIndex == contents.length - 1) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>const Login_view(),
+                            ),
+                          );
+                        } else {
+                          controller.nextPage(
+                            duration: const Duration(milliseconds: 200),
+                            curve: Curves.bounceIn,
+                          );
+                          setState(() {
+                            currentIndex++;
+                          });
+                        }
+                      },
+                      color: Colors.orange[700],
+                      textColor: Colors.white,
+                      child: const Text("Next"),
+                    ),
+
+
+
+
               ),
+              SizedBox(height: 20,),
+              Container(
+                child:  Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+
+                    MaterialButton(
+                        child: Text("Skipe",style: TextStyle(color: Colors.grey,letterSpacing: 2,fontWeight: FontWeight.bold),)
+                        ,onPressed: (){
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Login_view()));
+                    }
+                    ),
+                  ],
+                ),
+              )
             ],
           );
         },

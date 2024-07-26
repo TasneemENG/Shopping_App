@@ -1,6 +1,7 @@
 import 'package:animal_app/features/Home/presentation/views/Screens/CatygoryScreen.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/cart_view.dart';
 import 'package:flutter/material.dart';
-import 'package:animal_app/features/Home/presentation/views/Screens/CartScreen.dart';
+
 import 'package:animal_app/features/Home/presentation/views/Screens/ProfileScreen.dart';
 import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart'; // Ensure the import paths are correct
 
@@ -17,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = [
     const HomeView(), // Assuming HomeView contains your Home screen
     const CategoryScreen(), // Pass categories here or use a placeholder
-    const CartScreen(), // Implement this screen
+     Cart_view(), // Implement this screen
     const ProfileScreen(), // Implement this screen
   ];
 
