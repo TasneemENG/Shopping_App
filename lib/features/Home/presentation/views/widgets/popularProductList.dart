@@ -1,7 +1,6 @@
 import 'package:animal_app/features/Home/presentation/views/widgets/smallProductCard.dart';
 import 'package:flutter/material.dart';
 import '../../../data/models/Products.dart';
-import 'ProductCard.dart';
 
 class PopularProductList extends StatelessWidget {
   final List<Products> products;
