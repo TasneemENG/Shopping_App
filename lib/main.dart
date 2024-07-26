@@ -1,3 +1,4 @@
+import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
 import 'package:animal_app/features/Splash/presentation/views/screens/Splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         //   secondary: Colors.tealAccent,
         // ),
       ),
-      home: const Splash_view(),
+      home: const HomeView(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
 import 'package:animal_app/features/Splash/data/models/onboarding.dart';
 import 'package:animal_app/features/authentication/presentation/views/screens/login_view.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +134,7 @@ class _onboardingState extends State<onboarding> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>const HomeView(),
+                              builder: (context) =>const MainScreen(),
                             ),
                           );
                         } else {

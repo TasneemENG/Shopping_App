@@ -1,17 +1,14 @@
-
-import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../Home/data/models/Category.dart';
 import '../screens/create_account_view.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
+
 class Login_body extends StatefulWidget {
   const Login_body({super.key});
 
   @override
-  State<Login_body> createState() => _LoginState(categories);
+  State<Login_body> createState() => _LoginState();
 }
-
-
 
 class _LoginState extends State<Login_body> {
   final TextEditingController _passwordController = TextEditingController();
@@ -32,23 +29,16 @@ class _LoginState extends State<Login_body> {
   }
 
   void _validatePassword(String value) {
-    // Password should contain at least one letter and one number
     setState(() {
       _isPasswordValid = value.isNotEmpty && value.contains(RegExp(r'(?=.*[a-zA-Z])(?=.*\d)'));
     });
   }
 
   void _validateEmail(String value) {
-    // Email should be in correct format with "@"
     setState(() {
-      _isEmailValid = value.isNotEmpty&& value.contains('@gmail.com');
+      _isEmailValid = value.isNotEmpty && value.contains('@gmail.com');
     });
   }
-
-  @override
-  final List<Category>categories;
-
-  _LoginState(this.categories);
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +65,7 @@ class _LoginState extends State<Login_body> {
                 ),
               ),
             ),
-            const SizedBox(height: 40,),
+            const SizedBox(height: 40),
             const Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -92,11 +82,10 @@ class _LoginState extends State<Login_body> {
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Container(
                   decoration: BoxDecoration(
-
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.white70 ,
+                    color: Colors.white70,
                   ),
-                  child:  ListView(
+                  child: ListView(
                     children: [
                       const SizedBox(height: 20),
                       Padding(
@@ -105,29 +94,19 @@ class _LoginState extends State<Login_body> {
                           controller: _emailController,
                           onChanged: _validateEmail,
                           decoration: InputDecoration(
-                            focusedBorder:const OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.orange, // Set border color to black
-                              ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.orange),
                             ),
                             border: const OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.black, // Set border color to black
-                              ),
+                              borderSide: BorderSide(color: Colors.black),
                             ),
                             hintText: "Email",
                             suffixIcon: _isEmailValid
-                                ? const Icon(
-                              Icons.check,
-                              color: Colors.green,
-                            )
+                                ? const Icon(Icons.check, color: Colors.green)
                                 : null,
-                            prefixIcon: const Icon(
-                              Icons.email,
-                              color: Colors.black,
-                            ),
+                            prefixIcon: const Icon(Icons.email, color: Colors.black),
                             labelText: "Email",
-                            labelStyle: const TextStyle(color:  Colors.orange),
+                            labelStyle: const TextStyle(color: Colors.orange),
                           ),
                           cursorColor: Colors.orangeAccent,
                         ),
@@ -148,29 +127,19 @@ class _LoginState extends State<Login_body> {
                           onChanged: _validatePassword,
                           obscureText: true,
                           decoration: InputDecoration(
-                            focusedBorder:const OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.orange, // Set border color to black
-                              ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.orange),
                             ),
                             border: const OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.black, // Set border color to black
-                              ),
+                              borderSide: BorderSide(color: Colors.black),
                             ),
                             hintText: "Password",
                             suffixIcon: _isPasswordValid
-                                ? const Icon(
-                              Icons.check,
-                              color: Colors.green,
-                            )
+                                ? const Icon(Icons.check, color: Colors.green)
                                 : null,
-                            prefixIcon: const Icon(
-                              Icons.lock,
-                              color: Colors.black,
-                            ),
+                            prefixIcon: const Icon(Icons.lock, color: Colors.black),
                             labelText: "Password",
-                            labelStyle: const TextStyle(color:  Colors.orange ),
+                            labelStyle: const TextStyle(color: Colors.orange),
                           ),
                           cursorColor: Colors.orangeAccent,
                         ),
@@ -190,6 +159,7 @@ class _LoginState extends State<Login_body> {
                           style: TextStyle(color: Colors.orange),
                         ),
                       ),
+                      // Login Button
                       Center(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -201,7 +171,12 @@ class _LoginState extends State<Login_body> {
                             height: 40,
                             onPressed: () {
                               if (_isEmailValid && _isPasswordValid) {
-                                Navigator.push(context,MaterialPageRoute(builder: (context)=>const MainScreen()));
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const MainScreen(),
+                                  ),
+                                );
                               }
                             },
                             color: Colors.orangeAccent,
@@ -212,21 +187,49 @@ class _LoginState extends State<Login_body> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 20),
+                      // Skip Button
+
+                      // Register Button
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
                             "Don't Have An Account? ",
-                            style: TextStyle(color:  Colors.grey ),
+                            style: TextStyle(color: Colors.grey),
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Create_account()));
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Create_account(),
+                                ),
+                              );
                             },
                             child: const Text(
                               "Register Now",
                               style: TextStyle(color: Colors.orange),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MainScreen(), // Adjust the target screen as needed
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              "Skip",
+                              style: TextStyle(color: Colors.orange,fontSize: 20, ),
+
                             ),
                           ),
                         ],
@@ -236,7 +239,6 @@ class _LoginState extends State<Login_body> {
                 ),
               ),
             ),
-
             const SizedBox(height: 50),
           ],
         ),
