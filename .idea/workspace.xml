@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45b3de66-f979-498d-983d-76e63fbf7c32" name="Changes" comment="tasneem5">
+    <list default="true" id="45b3de66-f979-498d-983d-76e63fbf7c32" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/Splash/presentation/views/screens/onboarding_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Splash/presentation/views/screens/onboarding_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/shopping_list.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/shopping_tile.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
-    "ScreenRecorder.SavePath": "D:\\",
+    "ScreenRecorder.SavePath": "D:\\My_Flutter",
     "ScreenshotViewer.SavePath": "D:/shopping",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -52,7 +53,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "D:/",
+    "last_opened_file_path": "D:/My_Flutter",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false"
   }
@@ -154,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722088131586</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tasneem5">
+      <option name="closed" value="true" />
+      <created>1722095558966</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722095558966</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
