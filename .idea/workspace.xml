@@ -4,14 +4,37 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45b3de66-f979-498d-983d-76e63fbf7c32" name="Changes" comment="rania,,">
-      <change afterPath="$PROJECT_DIR$/sales/a2020cf5-9244-4244-8b8b-46186a571545.jpg" afterDir="false" />
+    <list default="true" id="45b3de66-f979-498d-983d-76e63fbf7c32" name="Changes" comment="tasneem5">
+      <change afterPath="$PROJECT_DIR$/android/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.gradle/7.5/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/Home/data/models/CartItem.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/favoriteScreen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/HomeView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/HomeView.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/MainScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/MainScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/cart_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/cart_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/details_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/Screens/details_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/ProductCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/ProductCard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/Widget_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/Widget_details.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/cart_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/cart_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/details_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/smallProductCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Home/presentation/views/widgets/smallProductCard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/Splash/presentation/views/widgets/onboading_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/Splash/presentation/views/widgets/onboading_body.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/authentication/presentation/views/widgets/login_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/authentication/presentation/views/widgets/login_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,26 +65,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;ScreenRecorder.SavePath&quot;: &quot;D:\\&quot;,
-    &quot;ScreenshotViewer.SavePath&quot;: &quot;D:/&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "ScreenRecorder.SavePath": "D:\\",
+    "ScreenshotViewer.SavePath": "D:/shopping",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "D:/",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lenovo\AndroidStudioProjects\shopping_app\sales" />

@@ -1,140 +1,142 @@
-
 import 'package:flutter/material.dart';
-
-import '../../../data/models/Dimensions.dart';
-import '../../../data/models/Meta.dart';
 import '../../../data/models/Products.dart';
-import '../../../data/models/Reviews.dart';
 
-class Cart_widgrt extends StatefulWidget {
+class CartWidget extends StatefulWidget {
+  static ValueNotifier<List<Products>> cartProductsNotifier = ValueNotifier([]);
 
-  static List<Products> favoriteproducts = [];
-  static void addFavorite(Products product) {
-    if (!favoriteproducts.contains(product)) {
-      favoriteproducts.add(product);
-      favoriteproducts.remove(product.title);
+  static void addProduct(Products product) {
+    if (!cartProductsNotifier.value.contains(product)) {
+      cartProductsNotifier.value = [...cartProductsNotifier.value, product];
     }
   }
 
-  static void removeFavorite(Products product) {
-    favoriteproducts.remove(product);
-
+  static void removeProduct(Products product) {
+    cartProductsNotifier.value =
+        cartProductsNotifier.value.where((p) => p != product).toList();
   }
-  const Cart_widgrt({super.key});
+
+  const CartWidget({super.key});
 
   @override
-  State<Cart_widgrt> createState() => _Cart_widgrtState();
+  _CartWidgetState createState() => _CartWidgetState();
 }
 
-class _Cart_widgrtState extends State<Cart_widgrt> {
-
+class _CartWidgetState extends State<CartWidget> {
   @override
-  double get total {
-    return Cart_widgrt.favoriteproducts.fold(
-      0.0,
-          (sum, product) => sum + (product.price ?? 0.0),
-    );
-  }
   Widget build(BuildContext context) {
-    double totalAmount = total;
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Cart items',
-              style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
-            ),
-          ],
+        title: const Text(
+          'Cart Items',
+          style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
         ),
+        centerTitle: true,
       ),
-      body:Column(
+      body: Column(
         children: [
           Expanded(
-            child: ListView.builder(
-              itemCount: Cart_widgrt.favoriteproducts.length,
-              itemBuilder: (context, index) {
-                final product = Cart_widgrt.favoriteproducts[index];
-                return Container(
-                  width: double.infinity,
-                  child: Column(
-                    children: [
-                      SizedBox(height: 20),
-                      ListTile(
-                        title: Text(
-                          product.title ?? '',
-                          style: TextStyle(color: Colors.black),
-                          textDirection: TextDirection.rtl,
-                        ),
-                        leading: Image.network(
-                          product.images?.first ?? 'https://via.placeholder.com/150',
-                          width: 150,
-                          height: 150,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+            child: ValueListenableBuilder<List<Products>>(
+              valueListenable: CartWidget.cartProductsNotifier,
+              builder: (context, cartProducts, child) {
+                final totalAmount = cartProducts.fold(
+                  0.0,
+                      (sum, product) => sum + (product.price ?? 0.0),
+                );
+
+                if (cartProducts.isEmpty) {
+                  return const Center(child: Text('No items in the cart.'));
+                }
+                return ListView.builder(
+                  itemCount: cartProducts.length,
+                  itemBuilder: (context, index) {
+                    final product = cartProducts[index];
+                    return SizedBox(
+                      width: double.infinity,
+                      child: Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10, right: 20),
-                            child: Text(
-                              "\$${product.price?.toStringAsFixed(2) ?? '0.00'}",
-                              style: TextStyle(
-                                color: Colors.orange,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          const SizedBox(height: 20),
+                          ListTile(
+                            title: Text(
+                              product.title ?? '',
+                              style: const TextStyle(color: Colors.black),
+                            ),
+                            leading: Image.network(
+                              product.images?.first ?? 'https://via.placeholder.com/150',
+                              width: 150,
+                              height: 150,
                             ),
                           ),
-                          MaterialButton(
-                            onPressed: () {
-                              setState(() {
-                                Cart_widgrt.removeFavorite(product);
-                              });
-
-                            },
-                            child: Text("Delete", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                            color: Colors.orange,
+                          const SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10, right: 20),
+                                child: Text(
+                                  "\$${product.price?.toStringAsFixed(2) ?? '0.00'}",
+                                  style: const TextStyle(
+                                    color: Colors.orange,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              MaterialButton(
+                                onPressed: () {
+                                  setState(() {
+                                    CartWidget.removeProduct(product);
+                                  });
+                                },
+                                color: Colors.orange,
+                                child: const Text("Remove", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                              ),
+                            ],
                           ),
+                          const SizedBox(height: 10),
+                          const Divider(color: Colors.orange),
                         ],
                       ),
-                      SizedBox(height: 10),
-                      Divider(color: Colors.orange),
-                    ],
-                  ),
+                    );
+                  },
                 );
               },
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Total: \$${totalAmount.toStringAsFixed(2)}',
-              style: TextStyle(
-                color: Colors.orange,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+            child: ValueListenableBuilder<List<Products>>(
+              valueListenable: CartWidget.cartProductsNotifier,
+              builder: (context, cartProducts, child) {
+                final totalAmount = cartProducts.fold(
+                  0.0,
+                      (sum, product) => sum + (product.price ?? 0.0),
+                );
+
+                return Text(
+                  'Total: \$${totalAmount.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                    color: Colors.orange,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                );
+              },
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           MaterialButton(
             color: Colors.orange,
-            child: Text(
-              "Order now",
+            child: const Text(
+              "Order Now",
               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
             onPressed: () {
               // Handle order now action
             },
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
         ],
       ),
     );
   }
 }
-

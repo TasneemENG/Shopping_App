@@ -143,9 +143,9 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           children: [
             // Drawer header with image
-            UserAccountsDrawerHeader(
-              accountName: const Text('User Name'),
-              accountEmail: const Text('user@example.com'),
+            const UserAccountsDrawerHeader(
+              accountName: Text('User Name'),
+              accountEmail: Text('user@example.com'),
               currentAccountPicture: CircleAvatar(
                 backgroundImage: AssetImage('sales/a2020cf5-9244-4244-8b8b-46186a571545.jpg'),
               ),

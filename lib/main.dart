@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         //   secondary: Colors.tealAccent,
         // ),
       ),
-      home: const HomeView(),
+      home: const Splash_view(),
     );
   }
 }

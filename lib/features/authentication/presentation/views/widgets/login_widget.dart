@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../Home/data/models/Category.dart';
 import '../screens/create_account_view.dart';
 import 'package:animal_app/features/Home/presentation/views/Screens/MainScreen.dart';
 

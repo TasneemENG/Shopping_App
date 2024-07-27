@@ -3,13 +3,8 @@ import 'package:flutter/material.dart';
 class Cart_view extends StatelessWidget {
   const Cart_view({super.key});
 
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
-    return const Cart_widgrt();
+    return const CartWidget();
   }
 }

@@ -1,9 +1,9 @@
 
+import 'package:animal_app/features/Home/presentation/views/widgets/Widget_details.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/models/Products.dart';
 
-import '../widgets/details_widget.dart';
 
 class DetailsScreen extends StatefulWidget {
   final Products product;

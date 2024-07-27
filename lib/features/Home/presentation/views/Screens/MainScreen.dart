@@ -1,8 +1,8 @@
 import 'package:animal_app/features/Home/presentation/views/Screens/CatygoryScreen.dart';
 import 'package:animal_app/features/Home/presentation/views/Screens/cart_view.dart';
+import 'package:animal_app/features/Home/presentation/views/Screens/favoriteScreen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:animal_app/features/Home/presentation/views/Screens/ProfileScreen.dart';
 import 'package:animal_app/features/Home/presentation/views/Screens/HomeView.dart'; // Ensure the import paths are correct
 
 class MainScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     const HomeView(), // Assuming HomeView contains your Home screen
     const CategoryScreen(), // Pass categories here or use a placeholder
      const Cart_view(), // Implement this screen
-    const ProfileScreen(), // Implement this screen
+    const FavoritesScreen(), // Implement this screen
   ];
 
   void _onItemTapped(int index) {
@@ -50,8 +50,8 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Cart',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.favorite),
+            label: 'Favorite',
           ),
         ],
         currentIndex: _selectedIndex,
